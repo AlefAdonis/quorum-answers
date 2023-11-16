@@ -13,10 +13,17 @@ RESULTS_FILE = "vote_results.csv"
 
 # File info for Output data
 COUNT_VOTES_LEGIS_FILE = "legislators-support-oppose-count.csv"
-RESULT_BILLS_FILE = "bill.csv"
+RESULT_BILLS_FILE = "bills.csv"
 
 
 def create_logger(log_path=".", log_level=logging.DEBUG):
+    """
+    Creates a global log
+    :param log_path: path where the log will be stored
+    :param log_level: level of the log (DEBUG, ERROR, WARNING, ...)
+    :return: logger object
+    """
+
     logger = logging.getLogger()
     logger.setLevel(log_level)
 
@@ -50,26 +57,49 @@ if __name__ == "__main__":
 
     log.info("Answering the First Question")
 
-    # renaming the id from the legis_df to match in the merge
-    legis_df.rename({"id": "legislator_id"}, axis=1, inplace=True)
-    bills_count = results_vote_df.merge(legis_df, on="legislator_id", how="left")
-
     # creating a copy of the legislator data to use the data without Data View problems
     result_of_legis_df = legis_df.copy()
     result_of_legis_df[["num_supported_bills", "num_opposed_bills"]] = 0
-    for b in bills_count.itertuples():
+    for b in results_vote_df.itertuples():
         if b.vote_type == 1:
-            if not result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_supported_bills"].isnull().any():
-                result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_supported_bills"] += 1
-            else:
-                result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_supported_bills"] = 1
-            continue
+            result_of_legis_df.loc[result_of_legis_df["id"] == b.legislator_id, "num_supported_bills"] += 1
 
         if b.vote_type == 2:
-            if not result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_opposed_bills"].isnull().any():
-                result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_opposed_bills"] += 1
-            else:
-                result_of_legis_df.loc[result_of_legis_df["legislator_id"] == b.legislator_id, "num_opposed_bills"] = 1
+            result_of_legis_df.loc[result_of_legis_df["id"] == b.legislator_id, "num_opposed_bills"] += 1
 
+    log.info("Creating the Output File for the first question.")
     result_of_legis_df.to_csv(DATA_DIR+COUNT_VOTES_LEGIS_FILE, sep=",", index=False)
-    pass
+
+    log.info("Answering the second question")
+
+    # Merging the two dataframes
+    bills_vote_df = results_vote_df.merge(votes_df, left_on="vote_id", right_on="id", how="left",
+                                          suffixes=[None, "_vote"])
+
+    # Processing the count of number of votes for each bill
+    bills_result_df = bill_df.copy()
+    bills_result_df[["supporter_count", "opposer_count"]] = 0
+    for v in bills_vote_df.itertuples():
+        if v.vote_type == 1:
+            bills_result_df.loc[bills_result_df["id"] == v.bill_id, "supporter_count"] += 1
+
+        if v.vote_type == 2:
+            bills_result_df.loc[bills_result_df["id"] == v.bill_id, "opposer_count"] += 1
+
+    # Getting the name of the Sponsor
+    bills_result_final_df = bills_result_df.merge(legis_df, how="left", left_on="sponsor_id", right_on="id",
+                                                  suffixes=[None, "_legislator"])
+
+    # Sanitizing the data results
+    bills_result_final_df.drop(["sponsor_id", "id_legislator"], axis=1, inplace=True)
+    bills_result_final_df.rename({"name": "primary_sponsor"}, axis=1, inplace=True)
+
+    bills_result_final_df["primary_sponsor"].fillna("Unknown", inplace=True)
+
+    columns = ["id", "title", "supporter_count", "opposer_count", "primary_sponsor"]
+    bills_result_final_df = bills_result_final_df[columns]
+
+    log.info("Creating the Output File for the second question.")
+    bills_result_final_df.to_csv(DATA_DIR+ RESULT_BILLS_FILE, sep=",", index=False)
+
+    log.info("Finishing process!")

@@ -186,3 +186,93 @@
 2023-11-16 09:59:06,670 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
 2023-11-16 09:59:06,672 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
 2023-11-16 10:17:52,835 - pyplot.py - DEBUG - Loaded backend gtk3agg version 3.24.20.
+2023-11-16 10:44:50,436 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:44:50,436 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:44:50,448 - main.py - INFO - Answering the First Question
+2023-11-16 10:45:38,350 - main.py - INFO - Answering the second question
+2023-11-16 10:50:47,243 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:50:47,243 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:50:47,254 - main.py - INFO - Answering the First Question
+2023-11-16 10:50:49,834 - main.py - INFO - Answering the second question
+2023-11-16 10:51:13,263 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:51:13,263 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:51:13,273 - main.py - INFO - Answering the First Question
+2023-11-16 10:51:15,292 - main.py - INFO - Answering the second question
+2023-11-16 10:51:32,164 - __init__.py - DEBUG - matplotlib data path: /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data
+2023-11-16 10:51:32,211 - __init__.py - DEBUG - CONFIGDIR=/home/alef/.config/matplotlib
+2023-11-16 10:51:32,226 - __init__.py - DEBUG - interactive is False
+2023-11-16 10:51:32,227 - __init__.py - DEBUG - platform is linux
+2023-11-16 10:51:32,308 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
+2023-11-16 10:51:32,321 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
+2023-11-16 10:51:38,081 - pyplot.py - DEBUG - Loaded backend gtk3agg version 3.24.20.
+2023-11-16 10:52:16,597 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:52:16,597 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:52:16,607 - main.py - INFO - Answering the First Question
+2023-11-16 10:52:16,712 - main.py - INFO - Answering the second question
+2023-11-16 10:52:45,003 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:52:45,003 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:52:45,014 - main.py - INFO - Answering the First Question
+2023-11-16 10:52:45,120 - main.py - INFO - Answering the second question
+2023-11-16 10:52:50,338 - __init__.py - DEBUG - matplotlib data path: /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data
+2023-11-16 10:52:50,342 - __init__.py - DEBUG - CONFIGDIR=/home/alef/.config/matplotlib
+2023-11-16 10:52:50,343 - __init__.py - DEBUG - interactive is False
+2023-11-16 10:52:50,343 - __init__.py - DEBUG - platform is linux
+2023-11-16 10:52:50,409 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
+2023-11-16 10:52:50,411 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
+2023-11-16 10:53:51,525 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:53:51,525 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:53:51,536 - main.py - INFO - Answering the First Question
+2023-11-16 10:53:51,636 - main.py - INFO - Answering the second question
+2023-11-16 10:54:47,690 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:54:47,690 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:54:47,701 - main.py - INFO - Answering the First Question
+2023-11-16 10:54:47,772 - main.py - INFO - Answering the second question
+2023-11-16 10:56:29,655 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:56:29,655 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:56:29,665 - main.py - INFO - Answering the First Question
+2023-11-16 10:56:29,731 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 10:56:29,733 - main.py - INFO - Answering the second question
+2023-11-16 10:56:32,404 - __init__.py - DEBUG - matplotlib data path: /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data
+2023-11-16 10:56:32,408 - __init__.py - DEBUG - CONFIGDIR=/home/alef/.config/matplotlib
+2023-11-16 10:56:32,409 - __init__.py - DEBUG - interactive is False
+2023-11-16 10:56:32,409 - __init__.py - DEBUG - platform is linux
+2023-11-16 10:56:32,473 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
+2023-11-16 10:56:32,475 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
+2023-11-16 10:56:51,031 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:56:51,031 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:56:51,042 - main.py - INFO - Answering the First Question
+2023-11-16 10:56:51,110 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 10:56:51,112 - main.py - INFO - Answering the second question
+2023-11-16 10:57:01,880 - __init__.py - DEBUG - matplotlib data path: /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data
+2023-11-16 10:57:01,884 - __init__.py - DEBUG - CONFIGDIR=/home/alef/.config/matplotlib
+2023-11-16 10:57:01,885 - __init__.py - DEBUG - interactive is False
+2023-11-16 10:57:01,885 - __init__.py - DEBUG - platform is linux
+2023-11-16 10:57:01,947 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
+2023-11-16 10:57:01,948 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
+2023-11-16 10:57:22,229 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:57:22,229 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:57:22,239 - main.py - INFO - Answering the First Question
+2023-11-16 10:57:22,311 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 10:57:22,313 - main.py - INFO - Answering the second question
+2023-11-16 10:57:43,511 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:57:43,511 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:57:43,521 - main.py - INFO - Answering the First Question
+2023-11-16 10:57:43,588 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 10:57:43,591 - main.py - INFO - Answering the second question
+2023-11-16 10:57:54,196 - main.py - INFO - Initiating Data Analysis
+2023-11-16 10:57:54,197 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 10:57:54,207 - main.py - INFO - Answering the First Question
+2023-11-16 10:57:54,277 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 10:57:54,279 - main.py - INFO - Answering the second question
+2023-11-16 10:58:25,532 - __init__.py - DEBUG - matplotlib data path: /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data
+2023-11-16 10:58:25,535 - __init__.py - DEBUG - CONFIGDIR=/home/alef/.config/matplotlib
+2023-11-16 10:58:25,537 - __init__.py - DEBUG - interactive is False
+2023-11-16 10:58:25,537 - __init__.py - DEBUG - platform is linux
+2023-11-16 10:58:25,578 - __init__.py - DEBUG - CACHEDIR=/home/alef/.cache/matplotlib
+2023-11-16 10:58:25,579 - font_manager.py - DEBUG - Using fontManager instance from /home/alef/.cache/matplotlib/fontlist-v330.json
+2023-11-16 11:14:19,648 - main.py - INFO - Initiating Data Analysis
+2023-11-16 11:14:19,648 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 11:14:19,656 - main.py - INFO - Answering the First Question
+2023-11-16 11:14:19,675 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 11:14:19,676 - main.py - INFO - Answering the second question
+2023-11-16 11:14:19,698 - main.py - INFO - Creating the Output File for the second question.
