@@ -276,3 +276,10 @@
 2023-11-16 11:14:19,675 - main.py - INFO - Creating the Output File for the first question.
 2023-11-16 11:14:19,676 - main.py - INFO - Answering the second question
 2023-11-16 11:14:19,698 - main.py - INFO - Creating the Output File for the second question.
+2023-11-16 11:38:01,253 - main.py - INFO - Initiating Data Analysis
+2023-11-16 11:38:01,253 - main.py - INFO - Extracting the data from csv files.
+2023-11-16 11:38:01,258 - main.py - INFO - Answering the First Question
+2023-11-16 11:38:01,276 - main.py - INFO - Creating the Output File for the first question.
+2023-11-16 11:38:01,381 - main.py - INFO - Answering the second question
+2023-11-16 11:38:01,412 - main.py - INFO - Creating the Output File for the second question.
+2023-11-16 11:38:01,413 - main.py - INFO - Finishing process!

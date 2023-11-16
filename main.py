@@ -45,18 +45,17 @@ if __name__ == "__main__":
     log = create_logger()
 
     log.info("Initiating Data Analysis")
-    if (not os.path.isfile(DATA_DIR + BILL_FILE) or not os.path.isfile(DATA_DIR + LEGIS_FILE) or
-            not os.path.isfile(DATA_DIR + VOTE_FILE) or not os.path.isfile(DATA_DIR + RESULTS_FILE)):
+    if (not os.path.isfile(os.path.normpath(DATA_DIR + BILL_FILE)) or not os.path.isfile(os.path.normpath(DATA_DIR + LEGIS_FILE)) or
+            not os.path.isfile(os.path.normpath(DATA_DIR + VOTE_FILE)) or not os.path.isfile(os.path.normpath(DATA_DIR + RESULTS_FILE))):
         log.error(f"There is input data missing! Please check the data dir {DATA_DIR} and rerun the script.")
 
     log.info("Extracting the data from csv files.")
-    bill_df = pd.read_csv(DATA_DIR+BILL_FILE, delimiter=",")
-    legis_df = pd.read_csv(DATA_DIR+LEGIS_FILE, delimiter=",")
-    results_vote_df = pd.read_csv(DATA_DIR+RESULTS_FILE, delimiter=",")
-    votes_df = pd.read_csv(DATA_DIR+VOTE_FILE, delimiter=",")
+    bill_df = pd.read_csv(os.path.normpath(DATA_DIR+BILL_FILE), delimiter=",")
+    legis_df = pd.read_csv(os.path.normpath(DATA_DIR+LEGIS_FILE), delimiter=",")
+    results_vote_df = pd.read_csv(os.path.normpath(DATA_DIR+RESULTS_FILE), delimiter=",")
+    votes_df = pd.read_csv(os.path.normpath(DATA_DIR+VOTE_FILE), delimiter=",")
 
     log.info("Answering the First Question")
-
     # creating a copy of the legislator data to use the data without Data View problems
     result_of_legis_df = legis_df.copy()
     result_of_legis_df[["num_supported_bills", "num_opposed_bills"]] = 0
@@ -68,10 +67,9 @@ if __name__ == "__main__":
             result_of_legis_df.loc[result_of_legis_df["id"] == b.legislator_id, "num_opposed_bills"] += 1
 
     log.info("Creating the Output File for the first question.")
-    result_of_legis_df.to_csv(DATA_DIR+COUNT_VOTES_LEGIS_FILE, sep=",", index=False)
+    result_of_legis_df.to_csv(os.path.normpath(DATA_DIR+COUNT_VOTES_LEGIS_FILE), sep=",", index=False)
 
     log.info("Answering the second question")
-
     # Merging the two dataframes
     bills_vote_df = results_vote_df.merge(votes_df, left_on="vote_id", right_on="id", how="left",
                                           suffixes=[None, "_vote"])
@@ -100,6 +98,6 @@ if __name__ == "__main__":
     bills_result_final_df = bills_result_final_df[columns]
 
     log.info("Creating the Output File for the second question.")
-    bills_result_final_df.to_csv(DATA_DIR+ RESULT_BILLS_FILE, sep=",", index=False)
+    bills_result_final_df.to_csv(os.path.normpath(DATA_DIR+ RESULT_BILLS_FILE), sep=",", index=False)
 
     log.info("Finishing process!")
